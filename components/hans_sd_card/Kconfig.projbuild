@@ -1,0 +1,68 @@
+# put here your custom config value
+menu "BSP ESP SD Configuration"
+    config BSP_ESP_SD_ENABLE
+        bool "SD ENABLE"
+        default y
+        help
+        是否使用sd卡
+
+    menu "SD PIN"
+
+        config D0_MISO_GPIO
+            int "D0/MISO GPIO number"
+            range 0 34
+            default 2
+            help
+                GPIO number (IOxx) to SPI MSIO or SDMMC D0.
+                Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to D0/MISO.
+                GPIOs 35-39 are input-only so cannot be used as outputs.
+
+        config D1_GPIO
+            int "D1 GPIO number"
+            range 0 34
+            default 4
+            help
+                GPIO number (IOxx) to SDMMC D1.
+                Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to D1.
+                GPIOs 35-39 are input-only so cannot be used as outputs.
+
+
+        config D2_GPIO
+            int "D2 GPIO number"
+            range 0 34
+            default 12
+            help
+                GPIO number (IOxx) to SDMMC D2.
+                Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to D2.
+                GPIOs 35-39 are input-only so cannot be used as outputs.
+
+        config D3_CS_GPIO
+            int "D3/CS GPIO number"
+            range 0 34
+            default 13
+            help
+                GPIO number (IOxx) to SPI CS or SDMMC D3.
+                Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to D3/CS.
+                GPIOs 35-39 are input-only so cannot be used as outputs.
+
+        config CMD_MOSI_GPIO
+            int "CMD/MOSI GPIO number"
+            range 0 34
+            default 15
+            help
+                GPIO number (IOxx) to SPI MOSI or SDMMC CMD.
+                Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to CMD/MOSI.
+                GPIOs 35-39 are input-only so cannot be used as outputs.
+
+        config CLK_GPIO
+            int "CLK GPIO number"
+            range 0 34
+            default 14
+            help
+                GPIO number (IOxx) to SPI CLK or SDMMC CLK.
+                Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to CLK.
+                GPIOs 35-39 are input-only so cannot be used as outputs.
+
+    endmenu
+
+endmenu
